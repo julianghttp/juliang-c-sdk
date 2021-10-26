@@ -14,23 +14,23 @@
 
 3.获取购买订单的[trade_no(业务号)](http://www.juliangip.com/users/product/time) 和对应的 [Key(业务秘钥)](http://www.juliangip.com/users/product/quantity)
 
-### <u>API部分 :</u>
+### <u>[API部分](https://gitee.com/juliangip/juliang-c-sdk/tree/master/examples/api) </u>
 
-[UrlUtils.cs]()
+[UrlUtils.cs](https://gitee.com/juliangip/juliang-c-sdk/blob/master/examples/api/UrlUtils.cs)
 
 使用 System.Security.Cryptography 和 System.Collections 对API请求接口链接进行枚举封装以及提供对请求参数进行处理加密的方法. 
 
-[HttpRequest.cs]()
+[HttpRequest.cs](https://gitee.com/juliangip/juliang-c-sdk/blob/master/examples/api/HttpRequest.cs)
 
 主要使用 System.Net 和 Sytem.IO 对处理后的请求URL和请求参数进行处理发送具体的API请求,并通过Stream流接收到返回后的数据作为返回值,该类中提供GET和POST请求的方法,可根据自己的需求通过method参数进行选择;
 
-<u>[client.cs]()</u>
+<u>[client.cs](https://gitee.com/juliangip/juliang-c-sdk/blob/master/examples/api/client.cs)</u>
 
 Client类主要进行了对API请求的具体封装,各个接口均有对应的请求方法,其中大多数方法的参数均为必填参数,部分接口提供多个可选参数,可根据实际需求使用Dictionary<string,string> 键值字典的形式传递可选参数.
 
 ### <u>案例演示部分</u>
 
-[Program.cs]()
+[Program.cs](https://gitee.com/juliangip/juliang-c-sdk/blob/master/examples/Program.cs)
 
 Program类中有使用client类进行API的详细案例,可参考案例进行使用.
 
