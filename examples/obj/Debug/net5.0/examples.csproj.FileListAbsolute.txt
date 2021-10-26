@@ -1,0 +1,16 @@
+D:\frontendCode\C#Test\SDK\examples\obj\Debug\net5.0\examples.csproj.AssemblyReference.cache
+D:\frontendCode\C#Test\SDK\examples\obj\Debug\net5.0\examples.GeneratedMSBuildEditorConfig.editorconfig
+D:\frontendCode\C#Test\SDK\examples\obj\Debug\net5.0\examples.AssemblyInfoInputs.cache
+D:\frontendCode\C#Test\SDK\examples\obj\Debug\net5.0\examples.AssemblyInfo.cs
+D:\frontendCode\C#Test\SDK\examples\obj\Debug\net5.0\examples.csproj.CoreCompileInputs.cache
+D:\frontendCode\C#Test\SDK\examples\bin\Debug\net5.0\examples.exe
+D:\frontendCode\C#Test\SDK\examples\bin\Debug\net5.0\examples.deps.json
+D:\frontendCode\C#Test\SDK\examples\bin\Debug\net5.0\examples.runtimeconfig.json
+D:\frontendCode\C#Test\SDK\examples\bin\Debug\net5.0\examples.runtimeconfig.dev.json
+D:\frontendCode\C#Test\SDK\examples\bin\Debug\net5.0\examples.dll
+D:\frontendCode\C#Test\SDK\examples\bin\Debug\net5.0\ref\examples.dll
+D:\frontendCode\C#Test\SDK\examples\bin\Debug\net5.0\examples.pdb
+D:\frontendCode\C#Test\SDK\examples\obj\Debug\net5.0\examples.dll
+D:\frontendCode\C#Test\SDK\examples\obj\Debug\net5.0\ref\examples.dll
+D:\frontendCode\C#Test\SDK\examples\obj\Debug\net5.0\examples.pdb
+D:\frontendCode\C#Test\SDK\examples\obj\Debug\net5.0\examples.genruntimeconfig.cache
