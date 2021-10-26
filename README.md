@@ -1,6 +1,6 @@
 ## 巨量IP SDK  -  C#
 
-使用本案例中的API文件夹下的工具类可快速调用巨量IP支持的API接口, [查看详情](https://visualstudio.microsoft.com/zh-hans/downloads/)
+使用本案例中的API文件夹下的工具类可快速调用巨量IP支持的API接口, [查看详情](https://gitee.com/juliangip/juliang-c-sdk/blob/master/README.md)
 
 ### <u>简介</u>
 
