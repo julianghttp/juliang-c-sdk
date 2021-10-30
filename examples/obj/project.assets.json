@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\frontendCode\\C#Test\\SDK\\examples\\examples.csproj",
+      "projectUniqueName": "D:\\frontendCode\\juliang-c-sdk\\examples\\examples.csproj",
       "projectName": "examples",
-      "projectPath": "D:\\frontendCode\\C#Test\\SDK\\examples\\examples.csproj",
+      "projectPath": "D:\\frontendCode\\juliang-c-sdk\\examples\\examples.csproj",
       "packagesPath": "C:\\Users\\MuBai\\.nuget\\packages\\",
-      "outputPath": "D:\\frontendCode\\C#Test\\SDK\\examples\\obj\\",
+      "outputPath": "D:\\frontendCode\\juliang-c-sdk\\examples\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MuBai\\AppData\\Roaming\\NuGet\\NuGet.Config"

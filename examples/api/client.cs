@@ -33,7 +33,7 @@ namespace API{
 		 * @param 	 	trade_no  			业务号			<必传参数>
 		 * @param 	 	num 				提取数量 		<必传参数>
 		 * @param 	 	otherParams 		可选参数字典		<可选参数>
-		 * otherParams {
+		 * @param 		otherParams {
 		 *  pt : 代理类型,
 		 *  result_type : 返回类型('text' | 'json' | 'xml')
 		 *  split 		: 结果分隔符,
@@ -128,6 +128,37 @@ namespace API{
 			string paramsStr = Endpoint.GetParams(param);
 			Console.WriteLine("Request URL : "+url+"?"+paramsStr);
 			return RequestApi.Request(url,paramsStr,method);
+		}
+
+		/**
+		 * 动态代理 -- 替换白名单Ip
+		 * @param 		key 		业务秘钥			<必传参数>
+		 * @param 		trade_no 	业务号			<必传参数>
+		 * @param 		new_ip		替换的白名单IP	<必传参数>
+		 * @param 		otherParams{				<可选参数字典>
+		 * 		old_ip : 被替换的白名单IP				<可选参数>
+		 * 		reset  : 是否重置已存在的白名单IP		<可选参数>
+		 * }
+		 * @param 		method 		HTTP请求类型		<可选参数>
+		 * @returns 	请求响应结果	
+		 */
+		public string DynamicReplaceWhiteIp(string key,string trade_no,string new_ip,Dictionary<string,string> otherParams = null,string method ="POST"){
+			//1.获取 动态代理 -- 替换白名单Ip的请求路径
+			string url = Endpoint.url.DYNAMIC_REPLACEWHITEIP.GetDescription();
+			//2.将请求数据进行收集
+			var param = new Dictionary<string,string>();
+			param.Add("key",key);
+			param.Add("trade_no",trade_no);
+			param.Add("new_ip",new_ip);
+			if(otherParams != null && otherParams.Count >0){
+				foreach(var obj in otherParams){
+					param.Add(obj.Key,obj.Value);
+				}
+			}
+			string paramsStr = Endpoint.GetParams(param);
+			Console.WriteLine($"Request URL : {url}?{paramsStr}");
+			return RequestApi.Request(url,paramsStr,method);
+
 		}
 
 		/**
@@ -240,6 +271,38 @@ namespace API{
 			string paramsStr = Endpoint.GetParams(param);
 			Console.WriteLine("Request URL : "+url+"?"+paramsStr);
 			return RequestApi.Request(url,paramsStr,method);
+		}
+
+
+		/**
+		 * 独享代理 -- 替换白名单Ip
+		 * @param 		key 		业务秘钥			<必传参数>
+		 * @param 		trade_no 	业务号			<必传参数>
+		 * @param 		new_ip		替换的白名单IP	<必传参数>
+		 * @param 		otherParams{				<可选参数字典>
+		 * 		old_ip : 被替换的白名单IP				<可选参数>
+		 * 		reset  : 是否重置已存在的白名单IP		<可选参数>
+		 * }
+		 * @param 		method 		HTTP请求类型		<可选参数>
+		 * @returns 	请求响应结果	
+		 */
+		public string AloneReplaceWhiteIp(string key,string trade_no,string new_ip,Dictionary<string,string> otherParams =null,string method ="POST"){
+			//1.获取 动态代理 -- 替换白名单Ip的请求路径
+			string url = Endpoint.url.ALONE_REPLACEWHITEIP.GetDescription();
+			//2.将请求数据进行收集
+			var param = new Dictionary<string,string>();
+			param.Add("key",key);
+			param.Add("trade_no",trade_no);
+			param.Add("new_ip",new_ip);
+			if(otherParams != null && otherParams.Count >0){
+				foreach(var obj in otherParams){
+					param.Add(obj.Key,obj.Value);
+				}
+			}
+			string paramsStr = Endpoint.GetParams(param);
+			Console.WriteLine($"Request URL : {url}?{paramsStr}");
+			return RequestApi.Request(url,paramsStr,method);
+
 		}
 
 

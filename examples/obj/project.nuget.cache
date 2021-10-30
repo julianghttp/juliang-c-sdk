@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Iq9bpoFyYOsEoxHB+5cNwU1I8dR9UDIbaBlxiNLbSbyAC9qXVO8pwhMbjcWbWlPfmVE3K0Vy7x8LUj/Z+7B3mw==",
+  "dgSpecHash": "mZN25RsQ7/12EUxk1c0aIK4anHUSl0jN0V2UckCAsGj7oANd3OW+nrX7pCh0n8VVbR1xgy/fbeEzl31ySQJu/Q==",
   "success": true,
-  "projectFilePath": "D:\\frontendCode\\C#Test\\SDK\\examples\\examples.csproj",
+  "projectFilePath": "D:\\frontendCode\\juliang-c-sdk\\examples\\examples.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

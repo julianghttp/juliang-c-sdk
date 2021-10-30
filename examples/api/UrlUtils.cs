@@ -13,30 +13,40 @@ namespace API{
 
 	static class Endpoint{
 
-		private static string Regoin = "http://192.168.10.60:8087";
+		// private static string Regoin = "http://192.168.10.52:8087";
+        private static string Regoin = "https://v1.api.juliangip.com";
+
 
 		internal enum url : byte{
-			[Description("/v1/users/getbalance")]
+			[Description("/users/getbalance")]
 			USERS_GETBALANCE,
-			[Description("/v1/dynamic/getips")]
+			[Description("/dynamic/getips")]
 			DYNAMIC_GETIPS,
-			[Description("/v1/dynamic/check")]
+			[Description("/dynamic/check")]
 			DYNAMIC_CHECK,
-			[Description("/v1/dynamic/setwhiteip")]
+			[Description("/dynamic/setwhiteip")]
     		DYNAMIC_SETWHITEIP,
-    		[Description("/v1/dynamic/getwhiteip")]
+    		[Description("/dynamic/getwhiteip")]
    			DYNAMIC_GETWHITEIP,
-   			[Description("/v1/dynamic/remain")]
+            [Description("/dynamic/replaceWhiteIp")]
+            DYNAMIC_REPLACEWHITEIP,
+   			[Description("/dynamic/remain")]
     		DYNAMIC_REMAIN,
-    		[Description("/v1/dynamic/balance")]
+    		[Description("/dynamic/balance")]
    			DYNAMIC_BALANCE,
-		    [Description("/v1/alone/getips")]
+		    [Description("/alone/getips")]
 		    ALONE_GETIPS,
-		    [Description("/v1/alone/setwhiteip")]
+		    [Description("/alone/setwhiteip")]
 		    ALONE_SETWHITEIP,
-    		[Description("/v1/alone/getwhiteip")]
-    		ALONE_GETWHITEIP 
+    		[Description("/alone/getwhiteip")]
+    		ALONE_GETWHITEIP,
+            [Description("/alone/replaceWhiteIp")]
+            ALONE_REPLACEWHITEIP 
 		}
+
+
+
+
 
 
 		public static string GetDescription(this Enum enumValue)
@@ -45,7 +55,7 @@ namespace API{
             DescriptionAttribute[] attrs =
                 fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false) as DescriptionAttribute[];
 
-            return attrs.Length > 0 ? Regoin+attrs[0].Description : enumValue.ToString();
+            return attrs.Length > 0 ? Regoin+attrs[0].Description : Regoin+enumValue.ToString();
         }
 
 
