@@ -30,12 +30,16 @@ namespace examples
             string kpsKey = "alone_key";
 
           
-            // //获取账户余额
+            // // //获取账户余额
             string  userMsg = client.UserBalance(userId,AccessKey);
             Console.WriteLine(userMsg);
 
+            //获取账户下对应订单类型的所有订单编号
+            string orderList = client.GetAllOrders(userId,AccessKey,"4");
+            Console.WriteLine(orderList);
 
-            // //动态代理 -- 提取代理IP
+
+            //动态代理 -- 提取代理IP
             var otherparam = new Dictionary<string,string>();
             otherparam.Add("pt","2");
             otherparam.Add("city_name","1");
@@ -44,15 +48,15 @@ namespace examples
             Console.WriteLine(dynamicGetIpsResp);
 
 
-            // //动态代理 -- 检查代理IP有效性
+            //动态代理 -- 检查代理IP有效性
             string dynamicCheckResp = client.DynamicCheck(dykey,dyTradeNo,"218.62.125.119:46991");
             Console.WriteLine(dynamicCheckResp)
 
-            // // //动态代理 -- 设置白名单
+            //动态代理 -- 设置白名单
             string dynamicSetWhiteIpResp = client.DynamicSetWhiteIp(dykey,dyTradeNo,"2.3.3.3,66.66.33.33");
             Console.WriteLine(dynamicSetWhiteIpResp)
 
-            // //动态代理 -- 获取白名单
+            //动态代理 -- 获取白名单
             string dynamicGetWhiteIpResp = client.DynamicGetWhiteIp(dykey,dyTradeNo);
             Console.WriteLine(dynamicGetWhiteIpResp);
 
@@ -66,20 +70,20 @@ namespace examples
 
             var otherQuery = new Dictionary<string,string>();
             otherQuery.Add("reset","1");
-            otherQuery.Add("old_ip","1.1.1.1");
-            string dynamicReplaceWhiteIp = client.DynamicReplaceWhiteIp(dyKey,dyTradeNo,"25.52.20.21",otherQuery);
+            otherQuery.Add("old_ip","1.3.3.2,5.2.1");
+            string dynamicReplaceWhiteIp = client.DynamicReplaceWhiteIp(dyKey,dyTradeNo,"25.52.20.21,9.5.2.7",otherQuery);
             Console.WriteLine(dynamicReplaceWhiteIp);
 
-            // //动态代理 -- 获取剩余可用时长
+            //动态代理 -- 获取剩余可用时长
             string dynamicRemainResp = client.DynamicRemain(dykey,dyTradeNo,"218.62.125.119:46991");
             Console.WriteLine(dynamicRemainResp);
 
-            // //动态代理 -- 获取剩余IP数
+            //动态代理 -- 获取剩余IP数
             string dynamicBalanceResp = client.DynamicBalance(dykey,dyTradeNo);
             Console.WriteLine(dynamicBalanceResp);
 
 
-            // //独享代理 -- 获取代理详情
+            //独享代理 -- 获取代理详情
             var kpsParam = new Dictionary<string,string>();
             kpsParam.Add("pt","2");
             kpsParam.Add("sock_port","1");
@@ -89,11 +93,11 @@ namespace examples
             string kpsGetIps = client.AloneGetIps(kpsKey,kpsTradeNo,kpsParam);
             Console.WriteLine(kpsGetIps);
 
-            // // //独享代理 -- 设置代理IP白名单
+            //独享代理 -- 设置代理IP白名单
             string kpsSetWhiteIp = client.AloneSetWhiteIp(kpsKey,kpsTradeNo,"15.16.17.18");
             Console.WriteLine(kpsSetWhiteIp);
 
-            // //独享代理 -- 获取代理IP白名单
+            //独享代理 -- 获取代理IP白名单
             string kpsGetWhiteIp = client.AloneGetWhiteIp(kpsKey,kpsTradeNo);
             Console.WriteLine(kpsGetWhiteIp);
 

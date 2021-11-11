@@ -27,6 +27,21 @@ namespace API{
 			return RequestApi.Request(url,paramsStr,method);
 		}
 
+
+		public string GetAllOrders(string userId,string AccessKey,string productType,string method = "POST"){
+			//1.获取访问用户余额的请求路径
+			string url = Endpoint.url.USERS_GETALLORDERS.GetDescription();
+			//2.收集请求写携带的参数
+			var param = new Dictionary<string,string>();
+			param.Add("key",AccessKey);
+			param.Add("user_id",userId);
+			param.Add("product_type",productType);
+			string paramsStr = Endpoint.GetParams(param);
+			Console.WriteLine("Request URL : "+url+"?"+paramsStr);
+			return RequestApi.Request(url,paramsStr,method);
+
+		}
+
 		/**
 		 * 动态代理 -- 提取代理IP
 		 * @param 	 	key 				业务秘钥 		<必传参数>

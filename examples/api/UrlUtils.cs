@@ -13,14 +13,14 @@ namespace API{
 
 	static class Endpoint{
 
-		// private static string Regoin = "http://192.168.10.52:8087";
         private static string Regoin = "https://v1.api.juliangip.com";
 
 
 		internal enum url : byte{
 			[Description("/users/getbalance")]
 			USERS_GETBALANCE,
-			[Description("/dynamic/getips")]
+            [Description("/users/getAllOrders")]
+            USERS_GETALLORDERS,
 			DYNAMIC_GETIPS,
 			[Description("/dynamic/check")]
 			DYNAMIC_CHECK,
