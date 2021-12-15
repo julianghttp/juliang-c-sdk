@@ -29,7 +29,7 @@ namespace API{
                     //调用内容
                     byte[] bytes = Encoding.UTF8.GetBytes(param.ToString());
                     //设置请求内容长度
-                    httpRequest.ContentLength = param.ToString().Length;
+                    httpRequest.ContentLength = bytes.Length;
                     using(Stream req = httpRequest.GetRequestStream()){
                     req.Write(bytes,0,bytes.Length);
                     req.Flush();
@@ -93,7 +93,8 @@ namespace API{
                 //调用内容
                 byte[] bytes = Encoding.UTF8.GetBytes(param.ToString());
                 //设置请求内容长度
-                httpRequest.ContentLength = param.ToString().Length;
+                httpRequest.ContentLength = bytes.Length;
+                // httpRequest.ContentLength = param.ToString().Length;
                 using(Stream req = httpRequest.GetRequestStream()){
                     req.Write(bytes,0,bytes.Length);
                     req.Flush();

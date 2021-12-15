@@ -10,9 +10,9 @@ namespace API{
 
 		/**
 		 * 获取账户可用余额
-		 * @param 		userId 		用户ID
-		 * @param 		AccessKey		秘钥
-		 * @param 		method 		HTTP请求方式
+		 * @param 		userId 		用户ID			<必传参数>
+		 * @param 		AccessKey		秘钥 		<必传参数>
+		 * @param 		method 		HTTP请求方式		<可选参数>
 		 * @returns		请求响应结果	
 		 */
 		public string UserBalance(string userId,string AccessKey,string method = "POST"){
@@ -27,8 +27,18 @@ namespace API{
 			return RequestApi.Request(url,paramsStr,method);
 		}
 
-
-		public string GetAllOrders(string userId,string AccessKey,string productType,string method = "POST"){
+		/**
+		 * 获取账户下对应产品类型的正常状态订单相关信息
+		 * @param 		userId 			用户ID
+		 * @param 		AccessKey		秘钥
+		 * @param 		method 			HTTP请求方式
+		 * @param 		otherParams  	可选参数字典
+		 * @param 		otherParams {
+		 * 		show : 是否返回秘钥信息
+		 * }
+		 * @returns		请求响应结果		
+		 */
+		public string GetAllOrders(string userId,string AccessKey,string productType,Dictionary<string,string> otherParams = null,string method = "POST"){
 			//1.获取访问用户余额的请求路径
 			string url = Endpoint.url.USERS_GETALLORDERS.GetDescription();
 			//2.收集请求写携带的参数
@@ -36,11 +46,40 @@ namespace API{
 			param.Add("key",AccessKey);
 			param.Add("user_id",userId);
 			param.Add("product_type",productType);
+			if(otherParams != null && otherParams.Count >0){
+				foreach(var obj in otherParams){
+					param.Add(obj.Key,obj.Value);
+				}
+			}
 			string paramsStr = Endpoint.GetParams(param);
 			Console.WriteLine("Request URL : "+url+"?"+paramsStr);
 			return RequestApi.Request(url,paramsStr,method);
 
 		}
+
+
+		/**
+		 * 获取账户下对应产品类型的正常状态订单相关信息
+		 * @param 		userId 			用户ID
+		 * @param 		AccessKey		秘钥
+		 * @param 		province  		省份名称
+		 * @param 		method 			HTTP请求方式
+		 * @returns		请求响应结果		
+		 */
+		public string GetCity(string userId,string AccessKey,string province,string method = "POST"){
+			//1.获取访问用户余额的请求路径
+			string url = Endpoint.url.USERS_GETCITY.GetDescription();
+			//2.收集请求写携带的参数
+			var param = new Dictionary<string,string>();
+			param.Add("key",AccessKey);
+			param.Add("user_id",userId);
+			param.Add("province",province);
+			string paramsStr = Endpoint.GetParams(param);
+			Console.WriteLine(paramsStr);
+			Console.WriteLine("Request URL : "+url+"?"+paramsStr);
+			return RequestApi.Request(url,paramsStr,method);
+		}
+
 
 		/**
 		 * 动态代理 -- 提取代理IP

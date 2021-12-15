@@ -13,6 +13,7 @@ namespace API{
 
 	static class Endpoint{
 
+		// private static string Regoin = "http://192.168.10.63:8087";
         private static string Regoin = "https://v1.api.juliangip.com";
 
 
@@ -21,6 +22,9 @@ namespace API{
 			USERS_GETBALANCE,
             [Description("/users/getAllOrders")]
             USERS_GETALLORDERS,
+            [Description("/users/getCity")]
+            USERS_GETCITY,
+            [Description("/dynamic/getips")]
 			DYNAMIC_GETIPS,
 			[Description("/dynamic/check")]
 			DYNAMIC_CHECK,
